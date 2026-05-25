@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday Khushi 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#000;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* Glitter */
+.glitter{
+    position:fixed;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite alternate;
+    z-index:0;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:0.2;
+        transform:scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+/* Balloons */
+.balloon{
+    position:fixed;
+    bottom:-150px;
+    width:70px;
+    height:90px;
+    border-radius:50%;
+    opacity:0.8;
+    animation:floatBalloon linear infinite;
+    z-index:0;
+}
+
+.balloon::after{
+    content:'';
+    position:absolute;
+    width:2px;
+    height:80px;
+    background:white;
+    left:50%;
+    top:90px;
+}
+
+@keyframes floatBalloon{
+    0%{
+        transform:translateY(0);
+    }
+    100%{
+        transform:translateY(-120vh);
+    }
+}
+
+/* Sections */
+section{
+    min-height:100vh;
+    width:100%;
+    padding:60px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.page1{
+    background:linear-gradient(135deg,#000000,#1a001f,#330033);
+}
+
+.page2{
+    background:linear-gradient(135deg,#111,#2d0b3f,#000);
+}
+
+.page3{
+    background:linear-gradient(135deg,#000,#141414,#35002d);
+}
+
+.page4{
+    background:linear-gradient(135deg,#1a001a,#000,#3b003b);
+}
+
+.page5{
+    background:linear-gradient(135deg,#000,#220022,#111);
+}
+
+.page6{
+    background:linear-gradient(135deg,#000,#330033,#000);
+}
+
+/* Headings */
+h1{
+    font-size:4rem;
+    color:#ff69b4;
+    margin-bottom:20px;
+    text-shadow:0 0 20px #ff69b4;
+}
+
+h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+    color:#ffd6f5;
+}
+
+h3{
+    margin-top:10px;
+    margin-bottom:10px;
+    color:#ffb6e6;
+}
+
+p{
+    max-width:800px;
+    line-height:1.8;
+    font-size:1.2rem;
+    margin:10px 0;
+}
+
+/* Card Box */
+.card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 30px rgba(255,105,180,0.2);
+    width:90%;
+    max-width:850px;
+}
+
+/* Main Photo */
+.main-photo{
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-top:25px;
+    border:4px solid rgba(255,255,255,0.4);
+    box-shadow:0 0 30px rgba(255,105,180,0.6);
+}
+
+/* Memory Grid */
+.memory-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.memory{
+    background:rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.memory-img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:15px;
+    border:2px solid rgba(255,255,255,0.2);
+}
+
+/* Button */
+.btn{
+    margin-top:25px;
+    padding:15px 30px;
+    border:none;
+    border-radius:50px;
+    background:#ff1493;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    background:#ff69b4;
+    box-shadow:0 0 20px #ff69b4;
+}
+
+video.memory-img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:15px;
+    border:2px solid rgba(255,255,255,0.2);
+    display:block;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    h1{
+        font-size:2.7rem;
+    }
+
+    h2{
+        font-size:2rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
+    .main-photo{
+        width:200px;
+        height:200px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+
+/* Glitter */
+for(let i=0;i<80;i++){
+    let glitter=document.createElement('div');
+    glitter.className='glitter';
+    glitter.style.left=Math.random()*100+'vw';
+    glitter.style.top=Math.random()*100+'vh';
+    glitter.style.animationDuration=(Math.random()*3+2)+'s';
+    document.body.appendChild(glitter);
+}
+
+/* Balloons */
+const colors=['#ff69b4','#ff1493','#ffd700','#00ffff','#ff4444'];
+
+for(let i=0;i<12;i++){
+    let balloon=document.createElement('div');
+    balloon.className='balloon';
+    balloon.style.left=Math.random()*100+'vw';
+    balloon.style.background=colors[Math.floor(Math.random()*colors.length)];
+    balloon.style.animationDuration=(Math.random()*10+10)+'s';
+    balloon.style.animationDelay=(Math.random()*5)+'s';
+    document.body.appendChild(balloon);
+}
+
+</script>
+
+<!-- PAGE 1 -->
+<section class="page1">
+
+    <div class="card">
+
+        <h1>Happy Birthday Khushi 🎂</h1>
+
+        <p>
+            24 May — A special day for a truly special friend ✨
+        </p>
+
+        <p>
+            This little website is made specially for you 💖
+        </p>
+
+        <img src="C:\Users\m\Birthday_Wish\WhatsApp Image 2026-05-23 at 9.38.25 PM.jpeg" class="main-photo">
+
+        <button class="btn" onclick="document.getElementById('page2').scrollIntoView()">
+            Start Reading ✨
+        </button>
+
+    </div>
+
+</section>
+
+<!-- PAGE 2 -->
+<section class="page2" id="page2">
+
+    <div class="card">
+
+        <h2>Things That Make You Amazing 🌸</h2>
+
+        <p>💖 Your smile that makes everyone happy</p>
+
+        <p>✨ Your caring and kind nature</p>
+
+        <p>😂 Your funny moments and reactions</p>
+
+        <p>🌙 Our random late-night conversations</p>
+
+        <p>🌸 The positive energy you bring everywhere</p>
+
+    </div>
+
+</section>
+
+<!-- PAGE 3 --->
+
+<section class="page3">
+
+    <div class="card">
+
+        <h2>Our Friendship Memories 📸</h2>
+
+        <div class="memory-grid">
+
+            <!-- Memory 1 -->
+            <div class="memory">
+
+            <video class="memory-img" autoplay muted loop playsinline>
+                    <source src="C:\Users\m\Birthday_Card\Collections\WhatsApp Video 2026-05-23 at 11.02.40 PM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+
+                <h3>😂 Funny Moments</h3>
+
+                <p>
+                    The random jokes, unexpected laughs,
+                    and chaotic conversations that somehow
+                    became my favorite memories.
+                </p>
+
+            </div>
+
+            <!-- Memory 2 -->
+            <div class="memory">
+
+                <video class="memory-img" autoplay muted loop playsinline>
+                    <source src="C:\Users\m\Birthday_Card\Collections\WhatsApp Video 2026-05-23 at 9.38.53 PM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>🌙 Late Night Talks</h3>
+
+                <p>
+                    Some late-night conversations just stay
+                    in your heart forever.
+                </p>
+
+            </div>
+
+            <!-- Memory 3 Video -->
+            <div class="memory">
+
+                <video class="memory-img" autoplay muted loop playsinline>
+                    <source src="C:\Users\m\Birthday_Card\Collections\WhatsApp Video 2026-05-23 at 11.02.39 PM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h3>✨ Good Vibes</h3>
+
+                <p>
+                    Even after long and exhausting work days,
+                    talking to you somehow made everything feel lighter,
+                    happier, and a little more special.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PAGE 4 -->
+<section class="page4">
+
+    <div class="card">
+
+        <h2>A Small Message For You 💌</h2>
+
+        <p>
+            Happy Birthday Khushi 💖
+        </p>
+
+         <p>
+            I genuinely feel lucky to have a friend like you 💛
+        </p>
+
+        <p>
+            You’re one of the kindest, funniest,
+            and most chaotic people I know —
+            a complete trouble magnet 😭✨
+        </p>
+
+        <p>
+            Even though we’ve spent only a short time together,
+            we still created so many beautiful memories.
+            You became one of the prettiest chapters of my life 🌸
+        </p>
+
+        <p>
+            I hope this birthday brings you happiness,
+            peace, success, and beautiful moments ✨
+        </p>
+
+        <p>
+            Stay happy, stay smiling,
+            and never stop shining 💖
+        </p>
+
+        <p>
+            And please…
+            try not to get into too much trouble this year 😭
+        </p>
+
+        <p>
+            You deserve all the good things in life 🌸
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PAGE 5 -->
+<section class="page5">
+
+    <div class="card">
+
+        <h2>Khushi's Birthday Stats 😎</h2>
+
+        <p>50% Cute 💖</p>
+
+        <p>30% Cute Anger & Ladaku Energy 😤✨</p>
+
+        <p>20% Chaos 😂</p>
+
+        <br>
+
+        <p>
+            Officially upgraded to a newer version today 🎂
+        </p>
+
+        <p>
+            Warning: Too much awesomeness detected ⚠️
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PAGE 6 -->
+<section class="page6">
+
+    <div class="card">
+
+        <h2>Thank You For Being Such A Good Friend 🌸</h2>
+
+        <p>
+            More memories.<br>
+            More laughter.<br>
+            More birthdays together ✨
+        </p>
+
+        <br>
+
+        <h2>Happy Birthday Again Khushi 🎂💖</h2>
+
+        <button class="btn" onclick="showMessage()">
+            Click Final Surprise ✨
+        </button>
+
+    </div>
+
+</section>
+
+<script>
+
+function showMessage(){
+
+    alert(
+`Khushi 💖
+
+May your smile always stay this beautiful ✨
+
+Happy Birthday 🎂`
+    );
+
+}
+
+</script>
+
+</body>
+</html>
